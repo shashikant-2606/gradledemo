@@ -35,12 +35,6 @@ public class Test_demo {
 		  driver.get("https://www.browserstack.com");
 		  System.out.println("edge launch");
 		  }
-		  //@Test
-		  public void setup4()
-		  {
-		  //System.setProperty("webdriver.edge.driver", "C:\\Users\\My_Work\\Desktop\\Villeos_project\\cicdpractice\\driver\\msedgedriver.exe");
-		  driver=new SafariDriver();
-		  driver.get("https://www.browserstack.com");
-		  System.out.println("safari launch");
-	  }
+		 
+	  
 }

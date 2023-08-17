@@ -38,7 +38,7 @@ tasks.named('test') {
    useTestNG() { 
    //Tells Gradle to use TestNG
    
-   outputDirectory=file("test-output")
+   //outputDirectory=file("test-output")
        suites 'testng.xml' //location of our suite.xml
   }
 }
