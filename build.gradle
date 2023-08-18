@@ -38,8 +38,8 @@ dependencies {
 
 tasks.named('test') {
     // Use JUnit Platform for unit tests.
-   useTestNG() { 
-   //Tells Gradle to use TestNG
+   useTestNG() 
+   { 
    
    outputDirectory=file("test-output")
        suites 'testng.xml' //location of our suite.xml
