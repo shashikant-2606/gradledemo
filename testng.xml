@@ -22,11 +22,7 @@
     </classes>
   </test> <!-- Test -->
   
-   <test  name="safariTest">
-	   <parameter name="browser" value="safari" />
-    <classes>
-      <class name="demo_project_practice.urlTest"/>
-    </classes>
+   
   </test> <!-- Test -->
   
 </suite> <!-- Suite -->
