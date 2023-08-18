@@ -40,7 +40,7 @@ tasks.named('test') {
     // Use JUnit Platform for unit tests.
    useTestNG() 
    { 
-   
+   //new 1
    outputDirectory=file("test-output")
        suites 'testng.xml' //location of our suite.xml
   }
