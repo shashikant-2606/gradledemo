@@ -2,7 +2,8 @@ package demo_project_practice;
 
 import org.testng.annotations.Test;
 
-public class urlTest extends Test_demo{
+public class urlTest extends Test_demo
+{
   @Test
   public void url() 
   {

@@ -1,140 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="3" failed="0" skipped="1">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-08-18T16:10:26 IST" name="Suite" finished-at="2023-08-18T16:10:55 IST" duration-ms="29555">
+  <suite started-at="2023-08-18T19:55:20 IST" name="Suite" finished-at="2023-08-18T19:55:55 IST" duration-ms="34968">
     <groups>
     </groups>
-    <test started-at="2023-08-18T16:10:26 IST" name="safariTest" finished-at="2023-08-18T16:10:27 IST" duration-ms="1602">
+    <test started-at="2023-08-18T19:55:20 IST" name="chromeTest" finished-at="2023-08-18T19:55:40 IST" duration-ms="19807">
       <class name="demo_project_practice.urlTest">
-        <test-method is-config="true" signature="Setup(java.lang.String)[pri:0, instance:demo_project_practice.urlTest@273444fe]" started-at="2023-08-18T16:10:26 IST" name="Setup" finished-at="2023-08-18T16:10:27 IST" duration-ms="1419" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[safari]]>
-              </value>
-            </param>
-          </params>
-          <exception class="org.openqa.selenium.remote.NoSuchDriverException">
-            <message>
-              <![CDATA[Unable to obtain: Capabilities {browserName: safari}, error Command failed with code: 65, executed: [C:\Users\My_Work\AppData\Local\Temp\selenium-manager84835730100017005011521409537693\selenium-manager.exe, --browser, safari, --output, json]
-safaridriver not available for download
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.6'
-Driver info: driver.version: SafariDriver]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.remote.NoSuchDriverException: Unable to obtain: Capabilities {browserName: safari}, error Command failed with code: 65, executed: [C:\Users\My_Work\AppData\Local\Temp\selenium-manager84835730100017005011521409537693\selenium-manager.exe, --browser, safari, --output, json]
-safaridriver not available for download
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.6'
-Driver info: driver.version: SafariDriver
-at org.openqa.selenium.remote.service.DriverFinder.getPath(DriverFinder.java:25)
-at org.openqa.selenium.remote.service.DriverFinder.getPath(DriverFinder.java:13)
-at org.openqa.selenium.safari.SafariDriver.generateExecutor(SafariDriver.java:94)
-at org.openqa.selenium.safari.SafariDriver.<init>(SafariDriver.java:83)
-at org.openqa.selenium.safari.SafariDriver.<init>(SafariDriver.java:79)
-at org.openqa.selenium.safari.SafariDriver.<init>(SafariDriver.java:56)
-at org.openqa.selenium.safari.SafariDriver.<init>(SafariDriver.java:47)
-at demo_project_practice.Test_demo.Setup(Test_demo.java:42)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
-at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:390)
-at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:325)
-at org.testng.TestRunner.invokeTestConfigurations(TestRunner.java:663)
-at org.testng.TestRunner.beforeRun(TestRunner.java:652)
-at org.testng.TestRunner.run(TestRunner.java:614)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:481)
-at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
-at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: org.openqa.selenium.WebDriverException: Command failed with code: 65, executed: [C:\Users\My_Work\AppData\Local\Temp\selenium-manager84835730100017005011521409537693\selenium-manager.exe, --browser, safari, --output, json]
-safaridriver not available for download
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.6'
-Driver info: driver.version: SafariDriver
-at org.openqa.selenium.manager.SeleniumManager.runCommand(SeleniumManager.java:151)
-at org.openqa.selenium.manager.SeleniumManager.getDriverPath(SeleniumManager.java:273)
-at org.openqa.selenium.remote.service.DriverFinder.getPath(DriverFinder.java:22)
-... 25 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.remote.NoSuchDriverException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Setup -->
-        <test-method signature="url()[pri:0, instance:demo_project_practice.urlTest@273444fe]" started-at="2023-08-18T16:10:27 IST" name="url" finished-at="2023-08-18T16:10:27 IST" duration-ms="0" status="SKIP">
-          <exception class="org.openqa.selenium.remote.NoSuchDriverException">
-            <message>
-              <![CDATA[Unable to obtain: Capabilities {browserName: safari}, error Command failed with code: 65, executed: [C:\Users\My_Work\AppData\Local\Temp\selenium-manager84835730100017005011521409537693\selenium-manager.exe, --browser, safari, --output, json]
-safaridriver not available for download
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.6'
-Driver info: driver.version: SafariDriver]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.remote.NoSuchDriverException: Unable to obtain: Capabilities {browserName: safari}, error Command failed with code: 65, executed: [C:\Users\My_Work\AppData\Local\Temp\selenium-manager84835730100017005011521409537693\selenium-manager.exe, --browser, safari, --output, json]
-safaridriver not available for download
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.6'
-Driver info: driver.version: SafariDriver
-at org.openqa.selenium.remote.service.DriverFinder.getPath(DriverFinder.java:25)
-at org.openqa.selenium.remote.service.DriverFinder.getPath(DriverFinder.java:13)
-at org.openqa.selenium.safari.SafariDriver.generateExecutor(SafariDriver.java:94)
-at org.openqa.selenium.safari.SafariDriver.<init>(SafariDriver.java:83)
-at org.openqa.selenium.safari.SafariDriver.<init>(SafariDriver.java:79)
-at org.openqa.selenium.safari.SafariDriver.<init>(SafariDriver.java:56)
-at org.openqa.selenium.safari.SafariDriver.<init>(SafariDriver.java:47)
-at demo_project_practice.Test_demo.Setup(Test_demo.java:42)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
-at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:390)
-at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:325)
-at org.testng.TestRunner.invokeTestConfigurations(TestRunner.java:663)
-at org.testng.TestRunner.beforeRun(TestRunner.java:652)
-at org.testng.TestRunner.run(TestRunner.java:614)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:481)
-at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
-at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: org.openqa.selenium.WebDriverException: Command failed with code: 65, executed: [C:\Users\My_Work\AppData\Local\Temp\selenium-manager84835730100017005011521409537693\selenium-manager.exe, --browser, safari, --output, json]
-safaridriver not available for download
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.6'
-Driver info: driver.version: SafariDriver
-at org.openqa.selenium.manager.SeleniumManager.runCommand(SeleniumManager.java:151)
-at org.openqa.selenium.manager.SeleniumManager.getDriverPath(SeleniumManager.java:273)
-at org.openqa.selenium.remote.service.DriverFinder.getPath(DriverFinder.java:22)
-... 25 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.remote.NoSuchDriverException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- url -->
-        <test-method is-config="true" signature="Teardown()[pri:0, instance:demo_project_practice.urlTest@273444fe]" started-at="2023-08-18T16:10:27 IST" name="Teardown" finished-at="2023-08-18T16:10:27 IST" duration-ms="0" status="SKIP">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Teardown -->
-      </class> <!-- demo_project_practice.urlTest -->
-    </test> <!-- safariTest -->
-    <test started-at="2023-08-18T16:10:26 IST" name="chromeTest" finished-at="2023-08-18T16:10:40 IST" duration-ms="13996">
-      <class name="demo_project_practice.urlTest">
-        <test-method is-config="true" signature="Setup(java.lang.String)[pri:0, instance:demo_project_practice.urlTest@69e153c5]" started-at="2023-08-18T16:10:26 IST" name="Setup" finished-at="2023-08-18T16:10:33 IST" duration-ms="6801" status="PASS">
+        <test-method is-config="true" signature="Setup(java.lang.String)[pri:0, instance:demo_project_practice.urlTest@53fe15ff]" started-at="2023-08-18T19:55:20 IST" name="Setup" finished-at="2023-08-18T19:55:27 IST" duration-ms="6668" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -145,19 +18,19 @@ at org.openqa.selenium.remote.service.DriverFinder.getPath(DriverFinder.java:22)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Setup -->
-        <test-method signature="url()[pri:0, instance:demo_project_practice.urlTest@69e153c5]" started-at="2023-08-18T16:10:33 IST" name="url" finished-at="2023-08-18T16:10:37 IST" duration-ms="4927" status="PASS">
+        <test-method signature="url()[pri:0, instance:demo_project_practice.urlTest@53fe15ff]" started-at="2023-08-18T19:55:27 IST" name="url" finished-at="2023-08-18T19:55:38 IST" duration-ms="11170" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- url -->
-        <test-method is-config="true" signature="Teardown()[pri:0, instance:demo_project_practice.urlTest@69e153c5]" started-at="2023-08-18T16:10:37 IST" name="Teardown" finished-at="2023-08-18T16:10:40 IST" duration-ms="2222" status="PASS">
+        <test-method is-config="true" signature="Teardown()[pri:0, instance:demo_project_practice.urlTest@53fe15ff]" started-at="2023-08-18T19:55:38 IST" name="Teardown" finished-at="2023-08-18T19:55:40 IST" duration-ms="1818" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Teardown -->
       </class> <!-- demo_project_practice.urlTest -->
     </test> <!-- chromeTest -->
-    <test started-at="2023-08-18T16:10:26 IST" name="edgeTest" finished-at="2023-08-18T16:10:53 IST" duration-ms="27394">
+    <test started-at="2023-08-18T19:55:20 IST" name="edgeTest" finished-at="2023-08-18T19:55:50 IST" duration-ms="29592">
       <class name="demo_project_practice.urlTest">
-        <test-method is-config="true" signature="Setup(java.lang.String)[pri:0, instance:demo_project_practice.urlTest@645aa696]" started-at="2023-08-18T16:10:26 IST" name="Setup" finished-at="2023-08-18T16:10:33 IST" duration-ms="6808" status="PASS">
+        <test-method is-config="true" signature="Setup(java.lang.String)[pri:0, instance:demo_project_practice.urlTest@72cc7e6f]" started-at="2023-08-18T19:55:20 IST" name="Setup" finished-at="2023-08-18T19:55:27 IST" duration-ms="6664" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -168,19 +41,19 @@ at org.openqa.selenium.remote.service.DriverFinder.getPath(DriverFinder.java:22)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Setup -->
-        <test-method signature="url()[pri:0, instance:demo_project_practice.urlTest@645aa696]" started-at="2023-08-18T16:10:33 IST" name="url" finished-at="2023-08-18T16:10:53 IST" duration-ms="20117" status="PASS">
+        <test-method signature="url()[pri:0, instance:demo_project_practice.urlTest@72cc7e6f]" started-at="2023-08-18T19:55:27 IST" name="url" finished-at="2023-08-18T19:55:49 IST" duration-ms="21833" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- url -->
-        <test-method is-config="true" signature="Teardown()[pri:0, instance:demo_project_practice.urlTest@645aa696]" started-at="2023-08-18T16:10:53 IST" name="Teardown" finished-at="2023-08-18T16:10:53 IST" duration-ms="431" status="PASS">
+        <test-method is-config="true" signature="Teardown()[pri:0, instance:demo_project_practice.urlTest@72cc7e6f]" started-at="2023-08-18T19:55:49 IST" name="Teardown" finished-at="2023-08-18T19:55:50 IST" duration-ms="988" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Teardown -->
       </class> <!-- demo_project_practice.urlTest -->
     </test> <!-- edgeTest -->
-    <test started-at="2023-08-18T16:10:26 IST" name="firefoxTest" finished-at="2023-08-18T16:10:55 IST" duration-ms="29544">
+    <test started-at="2023-08-18T19:55:20 IST" name="firefoxTest" finished-at="2023-08-18T19:55:55 IST" duration-ms="34968">
       <class name="demo_project_practice.urlTest">
-        <test-method is-config="true" signature="Setup(java.lang.String)[pri:0, instance:demo_project_practice.urlTest@cc43f62]" started-at="2023-08-18T16:10:26 IST" name="Setup" finished-at="2023-08-18T16:10:43 IST" duration-ms="17278" status="PASS">
+        <test-method is-config="true" signature="Setup(java.lang.String)[pri:0, instance:demo_project_practice.urlTest@3f191845]" started-at="2023-08-18T19:55:20 IST" name="Setup" finished-at="2023-08-18T19:55:38 IST" duration-ms="17706" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -191,11 +64,11 @@ at org.openqa.selenium.remote.service.DriverFinder.getPath(DriverFinder.java:22)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Setup -->
-        <test-method signature="url()[pri:0, instance:demo_project_practice.urlTest@cc43f62]" started-at="2023-08-18T16:10:43 IST" name="url" finished-at="2023-08-18T16:10:49 IST" duration-ms="5944" status="PASS">
+        <test-method signature="url()[pri:0, instance:demo_project_practice.urlTest@3f191845]" started-at="2023-08-18T19:55:38 IST" name="url" finished-at="2023-08-18T19:55:50 IST" duration-ms="11789" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- url -->
-        <test-method is-config="true" signature="Teardown()[pri:0, instance:demo_project_practice.urlTest@cc43f62]" started-at="2023-08-18T16:10:49 IST" name="Teardown" finished-at="2023-08-18T16:10:55 IST" duration-ms="6288" status="PASS">
+        <test-method is-config="true" signature="Teardown()[pri:0, instance:demo_project_practice.urlTest@3f191845]" started-at="2023-08-18T19:55:50 IST" name="Teardown" finished-at="2023-08-18T19:55:55 IST" duration-ms="5411" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Teardown -->

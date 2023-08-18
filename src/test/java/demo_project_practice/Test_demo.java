@@ -10,7 +10,8 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class Test_demo {
+public class Test_demo 
+{
 	WebDriver driver;
 	
 	@Parameters("browser")
