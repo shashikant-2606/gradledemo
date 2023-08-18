@@ -37,7 +37,11 @@ public class Test_demo {
 		  System.out.println("edge launch");
 		  break;
 		  
-		 
+		 case "safari":
+			  //System.setProperty("webdriver.edge.driver", "C:\\Users\\My_Work\\Desktop\\Villeos_project\\cicdpractice\\driver\\msedgedriver.exe");
+			  driver=new SafariDriver();
+			  System.out.println("edge launch");
+			  break;
 		  
 		  default:
 		  System.out.println("not recomend");
