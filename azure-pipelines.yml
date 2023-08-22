@@ -1,6 +1,8 @@
 trigger:
   - main
 
+stages:
+  - 
 pool:
   vmImage: 'macOS-latest'
 
@@ -15,6 +17,7 @@ pool:
                  com.apple.CoreSimulator.SimDeviceType.iPhone-12 
                  com.apple.CoreSimulator.SimRuntime.iOS-14-3`
                  xcrun simctl boot $SIMULATOR_UDID
+
        script:|
           node -v
           java -version
