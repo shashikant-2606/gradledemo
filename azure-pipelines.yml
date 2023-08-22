@@ -1,25 +1,81 @@
-# Gradle
-# Build your Java project and run tests with Gradle using a Gradle wrapper script.
-# Add steps that analyze code, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/java
-
 trigger:
   - master
 
 pool:
   vmImage: 'macOS-latest'
 
-steps: 
-- task: CocoaPods@0
-  inputs:
-    forceRepoUpdate: true
+jobs:
+- job: sonar
+  displayName: Analyse code with SonarQube
 
-- task: Xcode@5
-  inputs:
-    actions: 'build'
-    sdk: 'iphonesimulator'
-    configuration: 'Debug'
-    xcWorkspacePath: 'VolleyScorer.xcworkspace'
-    scheme: 'VolleyScorer'
-    xcodeVersion: '10'
-    args: '-derivedDataPath $(agent.buildDirectory)/build'
+
+- job: tests
+  displayName: Run tests
+  
+
+  steps:
+    - task: CmdLine@2
+      displayName: 'Configure Appium and Android SDK'
+      inputs:
+        script: |
+
+
+          echo "Installing Appium"
+          npm install -g appium@next
+          ln -fs /usr/local/lib/node_modules/appium/build/lib/main.js /usr/local/bin/appium
+          chmod +x /usr/local/bin/appium
+          export PATH=$PATH:/usr/local/bin/appium
+          appium --version
+          echo "Appium installed"
+
+
+          echo "Installing and Running Appium doctor"
+          npm install -g request@2.34.0
+          npm install @appium/doctor -g
+          ln -fs /usr/local/lib/node_modules/appium-doctor/appium-doctor.js /usr/local/bin/appium-doctor
+          chmod +x /usr/local/bin/appium-doctor
+          export PATH=$PATH:/usr/local/bin/appium-doctor
+          appium-doctor
+          echo "Appium doctor installed and executed"
+
+          #sudo xcode-select -s /Applications/Xcode_$(XCODE_VERSION).app/Contents/Developer
+          #xcrun simctl list
+
+    - task: CmdLine@2
+      displayName: 'Start Appium server'
+      inputs:
+        script: |
+          appium --allow-insecure chromedriver_autodownload --base-path /wd/hub &
+          echo "Appium server started"
+      condition: eq(variables['isRemote'], 'true')
+
+    - task: Maven@3
+      displayName: 'Run tests'
+      inputs:
+        mavenPomFile: 'pom.xml'
+        goals: 'test -DisRemote=$(isRemote)'
+        publishJUnitResults: true
+        testResultsFiles: '**/surefire-reports/TEST-*.xml'
+        javaHomeOption: 'JDKVersion'
+        mavenVersionOption: 'Default'
+        mavenAuthenticateFeed: false
+        effectivePomSkip: false
+        sonarQubeRunAnalysis: false
+
+    - task: CopyFiles@2
+      displayName: 'Copy failure screenshots and test logs'
+      inputs:
+        SourceFolder: '$(Build.SourcesDirectory)/target'
+        Contents: |
+            surefire-reports/failure_screenshots/*.png
+            log/*.log
+        TargetFolder: '$(Build.ArtifactStagingDirectory)'
+      condition: succeededOrFailed()
+
+    - task: PublishBuildArtifacts@1
+      displayName: 'Publish copied artifacts'
+      inputs:
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+        ArtifactName: 'drop'
+        publishLocation: 'Container'
+      condition: succeededOrFailed()
