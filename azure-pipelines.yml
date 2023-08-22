@@ -4,8 +4,6 @@ trigger:
 pool:
   vmImage: 'macOS-latest'
 
-
-
   steps:
   
       - task: NodeTool@0
@@ -14,7 +12,8 @@ pool:
         script:| 
                 SIMULATOR_NAME="my-sim"
                  SIMULATOR_UDID=`xcrun simctl create "$SIMULATOR_NAME"
-                 com.apple.CoreSimulator.SimDeviceType.iPhone-12 com.apple.CoreSimulator.SimRuntime.iOS-14-3`
+                 com.apple.CoreSimulator.SimDeviceType.iPhone-12 
+                 com.apple.CoreSimulator.SimRuntime.iOS-14-3`
                  xcrun simctl boot $SIMULATOR_UDID
        script:|
           node -v
