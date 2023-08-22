@@ -1,59 +1,21 @@
-variables:
-  temp: /__w/_temp
-  
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
 
+trigger:
+- master
 
-
-
-pool: default
-
-container: node
-
-services:
-  appium: appium
+pool:
+  vmImage: 'macOS-latest'
 
 steps:
-  # These steps download the Quamotion license file and iOS Developer Profile which will be used
-  # by the Appium container to install and launch the WebDriverAgent on your iOS device.
-  # You'll need to manually upload these files to the Pipelines Library in your Azure project.
-- task: DownloadSecureFile@1
-  name: license
+- task: NodeTool@0
   inputs:
-    secureFile: quamotion.license
-  displayName: "Download Quamotion license file"
-
-
-
-# These steps install and execute the idevice_id utility to print the UDID of all available iOS devices.
-# You can this to make sure your iOS devices are connected properly, and are available in your containers.
-- script: |
-    /tmp/docker exec -t -u 0 job-$(Build.BuildId)-node \
-    sh -c "apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -o Dpkg::Options::="--force-confold" -y install sudo"
-  displayName: "Install sudo"
-
-- script: |
-    sudo apt-get update
-    sudo apt-get install -y --no-install-recommends libimobiledevice-utils
-  displayName: "Install libimobiledevice-utils"
-
-- script: |
-    idevice_id -l
-  displayName: "List available iOS devices"
-
-# These steps get information about the Appium server and create a new Appium session.
-# They act as a smoke test for the Appium server.
-# The apipum server is available at http://appium:4723/; 'appium' is the name of the
-# service container and 4723 is the default port.
-- script: |
-    curl -X GET http://appium:4723/wd/hub/status
-  displayName: Get Appium status
-
-- script: |
-    curl -X POST -H "Content-Type: application/json" --data "@capabilities.json" http://appium:4723/wd/hub/session
-  displayName: Create Appium session
-
-- task: PublishBuildArtifacts@1
-  inputs:
-    pathToPublish: $(temp)/appium/
-    artifactName: logs
-  displayName: Publish Appium logs
+    versionSpec: "12.x"
+- script: sudo xcode-select --switch "/Applications/Xcode_11.6.app/Contents/Developer"
+- script: npm install
+  displayName: Xcode 11.6
+- script: sudo xcode-select --switch "/Applications/Xcode_12.4.app/Contents/Developer"
+- script: npm install
+  displayName: Xcode 12.4
