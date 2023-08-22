@@ -21,3 +21,38 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/TEST-*.xml'
     tasks: 'build'
+    
+
+- task: CocoaPods@0
+  inputs:
+    forceRepoUpdate: true
+
+- task: Xcode@5
+  inputs:
+    actions: 'build'
+    sdk: 'iphonesimulator'
+    configuration: 'Debug'
+    xcWorkspacePath: 'VolleyScorer.xcworkspace'
+    scheme: 'VolleyScorer'
+    xcodeVersion: '10'
+    args: '-derivedDataPath $(agent.buildDirectory)/build'
+
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: '$(agent.buildDirectory)/build/Build/Products/Debug-iphonesimulator/VolleyScorer.app'
+    archiveFile: '$(agent.buildDirectory)/build/VolleyScorer.zip'
+
+- task: NodeTool@0
+  inputs:
+    versionSpec: '10.x'
+
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '3.x'
+
+- bash: |
+    npm install -g appium
+    appium --app $APP_PATH &
+    cd tests
+    pip install -r requirements.txt
+    pytest test_volley.py -k deuce -vv
