@@ -1,18 +1,7 @@
 variables:
   temp: /__w/_temp
   
-resources:
-  # This section defines the containers which are used by the pipeline.
-  # The /var/run/usbmuxd file is the socket used by usbmuxd, which is used
-  # to communicate to iOS devices.
-  # 
-  # All containers in the same job share certain paths, such as
-  # $(Pipeline.Workspace).
-  #
-  # This assumes that the developer disk images are available at
-  # /home/ubuntu/devimg. You could also deploy the developer disk images
-  # via a container, or store them in a Git repository and clone that
-  # repository as part of the build.
+
 
 
 
