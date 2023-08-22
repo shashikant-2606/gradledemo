@@ -22,17 +22,7 @@ steps:
     secureFile: quamotion.license
   displayName: "Download Quamotion license file"
 
-- task: DownloadSecureFile@1
-  name: developerProfile
-  inputs:
-    secureFile: quamotion.developerprofile
-  displayName: "Download iOS Developer Profile"
 
-- script: |
-    mkdir -p $(temp)/quamotion
-    mv $(license.secureFilePath) $(temp)/quamotion/quamotion.license
-    mv $(developerProfile.secureFilePath) $(temp)/quamotion/quamotion.developerprofile
-  displayName: "Install Quamotion license file, iOS Developer Profile"
 
 # These steps install and execute the idevice_id utility to print the UDID of all available iOS devices.
 # You can this to make sure your iOS devices are connected properly, and are available in your containers.
