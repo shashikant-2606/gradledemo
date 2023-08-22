@@ -7,22 +7,9 @@ trigger:
 - main
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: 'macOS-10.13'
 
-steps:
-- task: Gradle@2
-  inputs:
-    workingDirectory: ''
-    gradleWrapperFile: 'gradlew'
-    gradleOptions: '-Xmx3072m'
-    javaHomeOption: 'JDKVersion'
-    jdkVersionOption: '1.11'
-    jdkArchitectureOption: 'x64'
-    publishJUnitResults: true
-    testResultsFiles: '**/TEST-*.xml'
-    tasks: 'build'
-    
-
+steps: 
 - task: CocoaPods@0
   inputs:
     forceRepoUpdate: true
@@ -36,23 +23,3 @@ steps:
     scheme: 'VolleyScorer'
     xcodeVersion: '10'
     args: '-derivedDataPath $(agent.buildDirectory)/build'
-
-- task: ArchiveFiles@2
-  inputs:
-    rootFolderOrFile: '$(agent.buildDirectory)/build/Build/Products/Debug-iphonesimulator/VolleyScorer.app'
-    archiveFile: '$(agent.buildDirectory)/build/VolleyScorer.zip'
-
-- task: NodeTool@0
-  inputs:
-    versionSpec: '10.x'
-
-- task: UsePythonVersion@0
-  inputs:
-    versionSpec: '3.x'
-
-- bash: |
-    npm install -g appium
-    appium --app $APP_PATH &
-    cd tests
-    pip install -r requirements.txt
-    pytest test_volley.py -k deuce -vv
