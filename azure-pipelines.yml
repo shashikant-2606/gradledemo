@@ -15,7 +15,7 @@ jobs:
 
 
 
-- job: tests
+- job: tests1
   displayName: Run tests
   
 
