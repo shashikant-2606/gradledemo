@@ -5,8 +5,14 @@ pool:
   vmImage: 'macOS-latest'
 
 jobs:
-- job: sonar
-  displayName: Analyse code with SonarQube
+- job: tests
+  displayName: Run tests
+  strategy:
+    maxParallel: 2
+    matrix:
+      REMOTE_SERVER:
+        isRemote: true
+
 
 
 - job: tests
