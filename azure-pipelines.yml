@@ -30,10 +30,7 @@ resources:
       appium
       --log ${{ variables.temp }}/appium/appium.log
       --log-level error:debug
-    env:
-      LICENSE_PATH: ${{ variables.temp }}/quamotion/quamotion.license
-      DEVELOPER_PROFILE_PATH: ${{ variables.temp }}/quamotion/quamotion.developerprofile
-      DEVELOPER_PROFILE_PASSWORD: quamotion
+
 
 pool: default
 
